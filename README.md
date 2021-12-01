@@ -1,5 +1,5 @@
-# AoC2020
+# Advent of Code 2021
 
-Just doing what I can over December :)
+I do this to make sure I don't forget how to program. Feel free to sledge my fairly rubbish code
 
 Cole Cornford

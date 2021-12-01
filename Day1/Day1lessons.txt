@@ -1,4 +1,2 @@
 Lessons Learned:
-no lessons lol
-
-n^2 then n^3
+No need for a boolean flag when can kludge with -1 rofl

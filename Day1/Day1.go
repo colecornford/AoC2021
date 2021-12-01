@@ -1,10 +1,10 @@
 package main
 
 import (
-	"io/ioutil"
-	"strings"
-	"strconv"
 	"fmt"
+	"io/ioutil"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	part2()
 }
 
-func getData()(lines []string){
+func getData() (lines []string) {
 	content, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		panic(err)
@@ -22,53 +22,35 @@ func getData()(lines []string){
 
 func part1() {
 	data := getData()
-	//fmt.Print(data)
-	part1:
-	for _, num1 := range data {
-        for _, num2 := range data {
-			x, err := strconv.Atoi(num1)
-			if err != nil {
 
-			}
-			y, err := strconv.Atoi(num2)
-			if err != nil {
-				
-			}
-			if x + y == 2020 {
-				product := x * y
-				fmt.Printf("%d * %d = %d\n", x, y, product)
-				break part1
-			}
+	var priorNo, count int = 0, 0
+	for _, item := range data {
+		newNumber, _ := strconv.Atoi(item)
+		if priorNo < newNumber {
+			count++
 		}
-    }
-
+		priorNo = newNumber
+	}
+	fmt.Print(count - 1) // Do this to compensate for the first item having no comparison
 }
 
 func part2() {
 	data := getData()
-	//fmt.Print(data)
-	part2:
-	for _, num1 := range data {
-        for _, num2 := range data {
-			for _, num3 := range data {
-				x, err := strconv.Atoi(num1)
-				if err != nil {
 
-				}
-				y, err := strconv.Atoi(num2)
-				if err != nil {
-					
-				}
-				z, err := strconv.Atoi(num3)
-				if err != nil {
-					
-				}
-				if x + y + z == 2020 {
-					product := x * y * z
-					fmt.Printf("%d * %d * %d = %d\n", x, y, z, product)
-					break part2
-				}
-			}
+	var priorSum, newSum, count int = 0, 0, 0
+	for index := range data {
+		if index+2 >= len(data) {
+			break
 		}
-    }
+		newNumber3, _ := strconv.Atoi(data[index+2])
+		newNumber2, _ := strconv.Atoi(data[index+1])
+		newNumber1, _ := strconv.Atoi(data[index])
+
+		newSum = newNumber1 + newNumber2 + newNumber3
+		if priorSum < newSum {
+			count++
+		}
+		priorSum = newSum
+	}
+	fmt.Print(count - 1) // Do this to compensate for the first window having no comparison
 }

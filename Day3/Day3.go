@@ -13,7 +13,7 @@ func main() {
 }
 
 func getData() (lines []string) {
-	content, err := ioutil.ReadFile("input.txt")
+	content, err := ioutil.ReadFile("jay.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -124,5 +124,13 @@ func part2() {
 	}
 	c, _ := strconv.ParseInt(carbonScrub, 2, 64)
 	o, _ := strconv.ParseInt(oxyGen, 2, 64)
+	fmt.Println("110011010000")
+	fmt.Println(oxyGen)
+	fmt.Println("001100100110")
+	fmt.Println(carbonScrub)
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
 	fmt.Println(c * o)
 }

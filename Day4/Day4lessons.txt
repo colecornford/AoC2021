@@ -1,0 +1,5 @@
+Lessons Learned:
+Spend a lot of time with extra testing samples, especially around whitespace.
+Review the input more thoroughly
+Trim is your friend
+Make sure your input structure is absolutely solid before working on logic.

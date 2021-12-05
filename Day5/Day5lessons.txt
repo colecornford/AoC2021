@@ -1,0 +1,3 @@
+Maps are good, not nested For Loops
+boundary checking!
+walk through issues, dont just accept you're dumb for diagonals
